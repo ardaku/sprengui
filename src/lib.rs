@@ -1,5 +1,5 @@
 // Sprengui
-// Copyright © 2020 Jeron Aldaron Lau.
+// Copyright © 2020-2021 Jeron Aldaron Lau.
 //
 // Licensed under any of:
 //  - Apache License, Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0)
@@ -10,7 +10,7 @@
 
 /// Graphical window.
 pub struct Window {
-    title: String
+    title: String,
 }
 
 impl Window {

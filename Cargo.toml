@@ -27,4 +27,5 @@ categories = []
 [dependencies]
 pix = "0.13"
 footile = "0.6"
-human = "0.1"
+human = "0.2"
+whoami = "1.0"
