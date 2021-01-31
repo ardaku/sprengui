@@ -390,16 +390,116 @@ they apply to the whole program.
  - `Alt`+`ArrowRight`: Swap operand right
 
 # Audio / Video Tracks
- - `x`: Cut Track / Split "Tape"
- - `Space`: Play/Pause
- - `ArrowLeft`: Move Cursor Frame or Sample Left
- - `ArrowRight`: Move Cursor Frame or Sample Right
- - `ArrowUp`: Move Cursor Track Up
- - `ArrowDown`: Move Cursor Track Down
- - `[`: Trim Start
- - `]`: Trim End
- - `{`: Extend Start
- - `}`: Extend End
+ - ` A`: Amplify Audio (Gain)
+ - `⇧A`: Select Audio Component Only
+ - `⌘A`: Select All (This Track)
+ - `⌥A`: Select All (All Tracks)
+
+ - `⌘C`: Copy Selection
+ - `⌥C`: Copy Selection's Effects
+
+ - ` D`: Fade In
+ - `⇧D`: Non-linear Fade In
+ - `⌘D`: Delete Horizontally For All Tracks
+ - `⌥D`: Duplicate Horizontally For All Tracks
+
+ - `e`: Add an Effect
+ - `E`: Manage Effects
+
+ - ` F`: Cross Fade
+ - `⇧F`: Non-Linear Cross Fade
+ - `⌘F`: Find By Clip Name
+ - `⌥F`: Find Matching Audio/Video Snippets
+
+ - ` G`: Fade Out
+ - `⇧G`: Non-linear Fade Out
+ - `⌘G`: Goto Time X
+ - `⌥G`: Goto Clip Source
+
+ - ` H` or ` ←`: Move Cursor Left
+ - ` J` or ` ↓`: Move Cursor Track Down
+ - ` K` or ` ↑`: Move Cursor Track Up
+ - ` L` or ` →`: Move Cursor Right
+ - `⇧H` or `⇧←`: Select (Sample/Grid) Left
+ - `⇧J` or `⇧↓`: Select Additional Track Down
+ - `⇧K` or `⇧↑`: Select Additional Track Up
+ - `⇧L` or `⇧→`: Select (Sample/Grid) Right
+ - `⌘H` or `⌘←`: Move Cursor Clip Left
+ - `⌘J` or `⌘↓`: Re-order (Move) Track Down
+ - `⌘K` or `⌘↑`: Re-order (Move) Track Up
+ - `⌘L` or `⌘→`: Move Cursor Clip Right
+ - `⌥H` or `⌥←`: Re-order (Move) Clip Left
+ - `⌥J` or `⌥↓`: Re-order (Move) Clip Down
+ - `⌥K` or `⌥↑`: Re-order (Move) Clip Up
+ - `⌥L` or `⌥→`: Re-order (Move) Clip Right
+
+ - `m`: Edit (Mix) Track Volume
+ - `M`: Edit (Mix) Master Volume
+
+ - ` N`: Insert New track
+ - `⇧N`: Clone to new track.
+ - `⌘N`: Clear Tab / New Project
+ - `⌥N`: Clear Tab / New Project From Template
+
+ - `⌘O`: Open… (Entire File)
+ - `⌥O`: Import… (Clip)
+
+ - ` P`: Edit Panning
+ - `⇧P`: ?????????????????
+ - `⌘P`: Print / Render
+ - `⌥P`: Print / Render Preview
+
+ - ` Q`: Toggle Muted
+ - `⇧Q`: Equalizer
+ - `⌘Q`: Suspend Window (Re-Open Tabs At Next Start)
+ - `⌥Q`: Quit Window (Without Saving Open Tab List)
+
+ - `r`: Pre-Render a Selection
+
+ - ` S`: Toggle Slip Mode/Grid&Snap Mode
+ - `⇧S`: ??????????????????????????
+ - `⌘S`: Sync With Drive
+ - `⌥S`: Share… (Export, Save As)
+
+ - ` T`: Add Non-Fade Transition
+ - `⇧T`: Edit/Delete Non-Fade Transition
+ - `⌘T`: New Tab / New Project
+ - `⌥T`: Re-Open Closed Tab
+
+ - ` V`: Toggle Move vs. Select Mode
+ - `⇧V`: Select Video Component Only
+ - `⌘V`: Paste From Clipboard
+ - `⌥V`: Paste From Clipboard Without Effects
+
+ - ` W`: Toggle Changing Constant Value Vs. Changing Over Time
+ - `⇧W`: Edit Waveform or Pixels
+ - `⌘W`: Close Tab
+ - `⌥W`: Close All Tabs But Keep Window Open
+
+ - ` X`: Cut Track / Split "Tape"
+ - `⇧X`: Cut / Split Effects
+ - `⌘X`: Cut Selection
+ - `⌥X`: Swap Selection
+
+ - ` Y`: Import Synthesizer Track
+
+ - `⌘Z`: Undo
+ - `⌥Z`: Redo
+
+ - `space`: Play/Pause
+ - `enter`: Leave Any Open Effect Editor
+ - `ENTER`: Select the entire clip
+ - `tab`: Next Clip on Current Track
+ - `caps` or `TAB`: Previous Clip on Current Track
+ - `arrow_left`: Move Cursor Frame or Sample Left
+ - `arrow_right`: Move Cursor Frame or Sample Right
+ - `arrow_up`: Move Cursor Track Up
+ - `arrow_down`: Move Cursor Track Down
+ - `delete`: Delete Clip
+ - `[`: Extend Start / Trim End
+ - `]`: Trim Start / Extend End
+ - `{`: Select Start
+ - `}`: Select End
  - `Ctr`+`[`: Slide Source Content Left (Trim Left + Extend Right)
  - `Ctr`+`]`: Slide Source Content Right (Trim Right + Extend Left)
 
@@ -409,6 +509,7 @@ they apply to the whole program.
  - `k`: Move Pen Up
  - `l`: Move Pen Right
  - `p`: Change Pen Shape
+ - `s`: Toggle Slip Mode/Grid&Snap Mode
  - `f`: Toggle Pen Down (Drawing)
  - `i`: Draw Straight Line
  - `s`: Shape Select
