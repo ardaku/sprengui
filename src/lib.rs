@@ -8,23 +8,54 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
-/// Graphical window.
-pub struct Window {
-    title: String,
-}
+//! # sprengui
+//!
+//! A simple, yet powerful, GUI library for Rust.
 
-impl Window {
-    pub fn new<T: ToString>(title: T) -> Self {
-        Window {
-            title: title.to_string()
-        }
+#![warn(
+    clippy::all,
+    clippy::restriction,
+    clippy::pedantic,
+    clippy::nursery,
+    clippy::cargo
+)]
+#![allow(clippy::blanket_clippy_restriction_lints)]
+#![allow(clippy::missing_inline_in_public_items)]
+#![allow(clippy::module_name_repetitions)]
+#![allow(clippy::exhaustive_structs)]
+#![allow(clippy::implicit_return)]
+
+use winit::event::Event;
+
+/// The root of the node tree
+pub mod node;
+/// Everything related to scripts
+pub mod script;
+
+pub trait EventListener {
+    fn on_event(&mut self, event: &Event<()>);
+    fn disable(&mut self);
+    fn enable(&mut self);
+    fn is_enabled(&self) -> bool;
+    fn is_disabled(&self) -> bool {
+        !self.is_enabled()
     }
-}
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
+    fn set_enabled(&mut self, enabled: bool);
+    fn set_disabled(&mut self, disabled: bool) {
+        self.set_enabled(!disabled);
+    }
+    fn toggle_enabled(&mut self) {
+        self.set_enabled(!self.is_enabled());
+    }
+    fn is_visible(&self) -> bool;
+    fn is_hidden(&self) -> bool {
+        !self.is_visible()
+    }
+    fn set_visible(&mut self, visible: bool);
+    fn set_hidden(&mut self, hidden: bool) {
+        self.set_visible(!hidden);
+    }
+    fn toggle_visible(&mut self) {
+        self.set_visible(!self.is_visible());
     }
 }
