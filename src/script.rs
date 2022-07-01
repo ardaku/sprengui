@@ -23,6 +23,7 @@
 
 use crate::node::node2d::gui::button::Button;
 use crate::node::Node;
+use crate::RealEq;
 use winit::event::{Event, WindowEvent};
 
 /// All scripts implement this trait,
@@ -32,10 +33,22 @@ use winit::event::{Event, WindowEvent};
 /// of [`NodeScript`], [`ButtonScript`],
 /// etc.
 pub trait Script {}
+/// All special scripts implement this
+/// trait, so that other traits can use
+/// this in there generic arguments e.g.
+/// `<T: `[`SpecialScript`]`>` covers all
+/// of [`ButtonScript`], [`NoScript`],
+/// etc.
+pub trait SpecialScript {}
 
 /// A script that can be attached to any type of node
 pub type NodeScript<T> = fn(&mut dyn Node<T>, &Event<()>);
 impl<T> Script for NodeScript<T> {}
+impl<T> RealEq for NodeScript<T> {
+    fn eq(&self, other: &Self) -> bool {
+        std::ptr::eq(self, other)
+    }
+}
 
 /// A script that can be attached to any button node
 #[derive(Clone, Copy)]
@@ -48,7 +61,19 @@ pub struct ButtonScript<'closures> {
     pub on_hover: &'closures dyn Fn(&mut dyn Button),
 }
 impl Script for ButtonScript<'_> {}
+impl SpecialScript for ButtonScript<'_> {}
+impl RealEq for ButtonScript<'_> {
+    fn eq(&self, other: &Self) -> bool {
+        std::ptr::eq(self, other)
+    }
+}
 
 /// A special script for when you don't want a script.
 pub type NoScript = ();
 impl Script for NoScript {}
+impl SpecialScript for NoScript {}
+impl RealEq for NoScript {
+    fn eq(&self, other: &Self) -> bool {
+        std::ptr::eq(self, other)
+    }
+}

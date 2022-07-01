@@ -25,37 +25,19 @@
 #![allow(clippy::exhaustive_structs)]
 #![allow(clippy::implicit_return)]
 
-use winit::event::Event;
-
 /// The root of the node tree
 pub mod node;
 /// Everything related to scripts
 pub mod script;
 
-pub trait EventListener {
-    fn on_event(&mut self, event: &Event<()>);
-    fn disable(&mut self);
-    fn enable(&mut self);
-    fn is_enabled(&self) -> bool;
-    fn is_disabled(&self) -> bool {
-        !self.is_enabled()
-    }
-    fn set_enabled(&mut self, enabled: bool);
-    fn set_disabled(&mut self, disabled: bool) {
-        self.set_enabled(!disabled);
-    }
-    fn toggle_enabled(&mut self) {
-        self.set_enabled(!self.is_enabled());
-    }
-    fn is_visible(&self) -> bool;
-    fn is_hidden(&self) -> bool {
-        !self.is_visible()
-    }
-    fn set_visible(&mut self, visible: bool);
-    fn set_hidden(&mut self, hidden: bool) {
-        self.set_visible(!hidden);
-    }
-    fn toggle_visible(&mut self) {
-        self.set_visible(!self.is_visible());
-    }
+pub struct Sprengui2D {
+    /// The node tree
+    pub tree: node::NodeTree<
+        node::node2d::Node2D,
+        script::NodeScript<node::node2d::Node2D>,
+    >,
+}
+
+pub trait RealEq {
+    fn eq(&self, other: &Self) -> bool;
 }
