@@ -1,0 +1,39 @@
+# This is a clone of the Adwaita GTK theme in Sprengui theme format.
+# Color schemes and fonts are separate.
+
+# The theme for the window's headerbar.
+headerbar:
+  # 46 pixels for the height of the headerbar
+  size: 46
+  # Use 6 pixels of padding.
+  padding: 6
+  # 1 lighter pixel row at the top 
+  topshadow: TRUE
+  # 4-way gradient from lower left widdershins
+  gradient: xDAD6D2 xDAD6D2 xE1DEDB xE1DEDB
+
+# Widget properties
+widget:
+  # Height dimensions of 32 pixels
+  size: 32
+  # 6 pixel distance between widgets
+  margin: 6
+  # Round the corners by 5 pixels
+  radius: 5,
+  # Internal widget padding set to 8
+  padding: 8
+  # 1 pixel border
+  border: 1
+  # Icon shadow up 1 pixel from icon
+  iconshadow: 0 -1
+
+# ScrollView properties
+scroll:
+  # Default width of scroll bar when shown
+  width: 3
+  # Width of scroll bar while hovering
+  hover: 8
+  # Margin of scroll bar within container while hovering
+  margin: 3
+  # 1 pixel border on scroll bar while hovering
+  border: 1
