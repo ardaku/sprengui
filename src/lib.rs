@@ -8,6 +8,13 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
+use std::{
+    pin::Pin,
+    task::{Context, Poll},
+};
+
+use pasts::{Notifier, prelude::*};
+
 /// Text formatting
 pub enum Format {
     /// Paragraph
@@ -76,6 +83,13 @@ enum Icon {
     Wand,
     /// Pencil icon
     Pencil,
+}
+
+/// HUD Actions
+///
+/// Events within the HUD that are returned back to the user.
+pub enum HUDAction {
+    
 }
 
 struct MenuItem {
@@ -188,6 +202,15 @@ impl Window {
         todo!()
     }
 }
+
+impl Notifier for Window {
+    type Event = Widget;
+
+    fn poll_next(self: Pin<&mut Self>, cx: &mut Context<'_>) -> Poll<Self::Event> {
+       Poll::Pending
+    } 
+}
+
 
 /// A GUI page
 pub struct Page {
