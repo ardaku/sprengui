@@ -99,7 +99,7 @@ pub struct WindowAction {
 }
 
 
-#[derive(Copy, Clone, PartialEq, Eq)]
+#[derive(Clone, PartialEq, Eq)]
 /// ID for a search action
 pub struct SearchAction {
     // what are we searching for?
