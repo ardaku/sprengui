@@ -101,7 +101,7 @@ pub struct WindowAction {
 
 #[derive(Copy, Clone, PartialEq, Eq)]
 /// ID for a search action
-pub struct searchAction {
+pub struct SearchAction {
     // what are we searching for?
     query: String,
     // where are we looking?
