@@ -116,9 +116,9 @@ pub struct ButtonAction {
     entry_id: usize,
 }
 
-pub struct FieldAction
+pub struct FieldAction;
 
-pub struct SliderAction
+pub struct SliderAction;
 
 /// Actions that produce data
 pub enum EntryAction {
