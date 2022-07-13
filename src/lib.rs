@@ -299,6 +299,24 @@ impl Page {
     }
 }
 
+/// Bezier
+///
+/// param t, float between 0 and 1 that describes
+///     at which point in the animation to get the
+///     bezier coefficient
+/// 
+/// return the bezier coefficient for the given
+///     point in the animation, or none if given
+///     an invalid time.
+fn bezier(t: f32) -> Option<f32> {
+    // make sure input is valid
+    if t > 1.0 || t < 0.0 {
+        return None;
+    }
+
+    Some(3.0 * (1.0 - t) * (t * t))
+}
+
 #[cfg(test)]
 mod tests {
     #[test]
