@@ -37,6 +37,11 @@ impl Page {
         self.widgets.len()
     }
 
+    /// Get whether or not there are no widgets in the window
+    pub fn is_empty(&self) -> bool {
+        self.widgets.is_empty()
+    }
+
     /// Add a widget to the window
     pub fn push(&mut self, widget: Widget) {
         self.widgets.push(widget);
