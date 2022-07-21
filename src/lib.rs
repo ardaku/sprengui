@@ -8,20 +8,17 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
-use pasts::{prelude::*, Notifier};
+use pasts::{Notifier, prelude::*};
 use crate::action::Action;
-use crate::text::Text;
-use crate::widget::Widget;
-use crate::window::Window;
+use page::text::Text;
+use crate::page::widget::Widget;
+use crate::page::window::Window;
 
 #[cfg(test)]
 mod tests;
 
-mod text;
-mod widget;
-mod action;
-mod window;
-mod page;
+pub mod action;
+pub mod page;
 
 enum Icon {
     /// Wand icon for effects
