@@ -8,7 +8,11 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
-use pasts::{Notifier, prelude::*};
+use pasts::{prelude::*, Notifier};
+
+#[cfg(test)]
+mod tests;
+
 
 /// Text formatting
 pub enum Format {
@@ -98,7 +102,6 @@ pub struct WindowAction {
     window_id: usize,
 }
 
-
 #[derive(Clone, PartialEq, Eq)]
 /// ID for a search action
 pub struct SearchAction {
@@ -147,7 +150,7 @@ pub enum Action {
     /// Input interactions
     Entry(EntryAction),
     /// Tab functionality
-    Tab(TabAction)
+    Tab(TabAction),
 }
 
 struct MenuItem {
@@ -264,11 +267,13 @@ impl Window {
 impl Notifier for Window {
     type Event = Action;
 
-    fn poll_next(self: Pin<&mut Self>, _cx: &mut Exec<'_>) -> Poll<Self::Event> {
-       Poll::Pending
-    } 
+    fn poll_next(
+        self: Pin<&mut Self>,
+        _cx: &mut Exec<'_>,
+    ) -> Poll<Self::Event> {
+        Poll::Pending
+    }
 }
-
 
 /// A GUI page
 pub struct Page {
@@ -299,10 +304,3 @@ impl Page {
     }
 }
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-}
