@@ -8,11 +8,7 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
-use pasts::{Notifier, prelude::*};
-use crate::action::Action;
-use page::text::Text;
-use crate::page::widget::Widget;
-use crate::page::window::Window;
+use page::window;
 
 #[cfg(test)]
 mod tests;
@@ -26,7 +22,6 @@ enum Icon {
     /// Pencil icon
     Pencil,
 }
-
 
 struct MenuItem {
     icon: Option<Icon>,
@@ -45,11 +40,10 @@ pub struct Menu {
 impl Menu {
     /// Create a menu for this window
     // FIXME: Take menu items as parameters or use builder
-    pub fn new(window: &mut Window) -> Self {
+    pub fn new(window: &mut window::Window) -> Self {
         let id = window.menus;
         window.menus += 1;
         let items = Vec::new();
         Self { id, items }
     }
 }
-

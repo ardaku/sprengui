@@ -8,7 +8,6 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
-
 /// Text formatting
 pub enum Format {
     /// Paragraph
