@@ -8,26 +8,25 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
+pub mod text;
 pub mod widget;
 pub mod window;
-pub mod text;
 
-use crate::{Widget, Window};
 
 /// A GUI page
 pub struct Page {
-    widgets: Vec<Widget>,
+    widgets: Vec<widget::Widget>,
 }
 
 impl Page {
-    pub fn new(_window: &mut Window) -> Self {
+    pub fn new(_window: &mut window::Window) -> Self {
         Self {
             widgets: Vec::new(),
         }
     }
 
     /// Set the widgets
-    pub fn set<const N: usize>(&mut self, widgets: [Widget; N]) {
+    pub fn set<const N: usize>(&mut self, widgets: [widget::Widget; N]) {
         self.widgets.clear();
         self.widgets.extend(widgets);
     }
@@ -43,8 +42,7 @@ impl Page {
     }
 
     /// Add a widget to the window
-    pub fn push(&mut self, widget: Widget) {
+    pub fn push(&mut self, widget: widget::Widget) {
         self.widgets.push(widget);
     }
 }
-

@@ -8,43 +8,46 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
-
 /// Text formatting
 pub enum Format {
     /// Paragraph
-    Paragraph,
+    Paragraph(Box<Self>),
     /// Code block
-    Code,
+    Code(Box<Self>),
     /// Quote block begin
-    QuoteIn,
+    QuoteIn(Box<Self>),
     /// Quote block end
-    QuoteOut,
+    QuoteOut(Box<Self>),
     /// H1, usually title of document
-    Title,
+    Title(Box<Self>),
     /// H2, section 1
-    Section,
+    Section(Box<Self>),
     /// H3, section 1.1
-    Header,
+    Header(Box<Self>),
     /// H4, section 1.1.1
-    Subheader,
+    Subheader(Box<Self>),
     /// Label for following user entry
-    Label,
+    Label(Box<Self>),
+    /// End the chain of formatting
+    ///
+    /// Should not be used on it's own.
+    None,
 }
 
 /// Text component
 pub enum Text {
     /// Change to new format
-    Format(Format),
+    Format(Format, Box<Self>),
     /// Strong (bold for written English)
-    Strong(bool),
+    Strong(bool, Box<Self>),
     /// Emphasis (italic for written English)
-    Emphasis(bool),
+    Emphasis(bool, Box<Self>),
     /// Code (always monospace)
-    Code(bool),
+    Code(bool, Box<Self>),
     /// Highlight (with a color - except in high-contrast mode, then boxed text)
-    Highlight(bool),
+    Highlight(bool, Box<Self>),
     /// Mark (underline, or bracket depending on language)
-    Mark(bool),
+    Mark(bool, Box<Self>),
     /// Render text
     Span(String),
 }

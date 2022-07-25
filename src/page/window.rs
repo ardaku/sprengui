@@ -8,15 +8,16 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
+use crate::action;
+use crate::page::widget;
+use pasts::{prelude, Notifier};
 use std::pin::Pin;
 use std::task::Poll;
-use pasts::Notifier;
-use crate::{Action, Exec, Menu, Widget};
 
 /// Graphical window.
 pub struct Window {
     /*window::Window, */
-    widgets: Vec<Widget>,
+    widgets: Vec<widget::Widget>,
     pub(crate) menus: usize,
 }
 
@@ -84,7 +85,7 @@ impl Window {
     }
 
     /// Set the HUD menu for this window.
-    pub fn menu(&mut self, _menu: &Menu) {
+    pub fn menu(&mut self, _menu: &crate::Menu) {
         todo!()
     }
 
@@ -100,11 +101,11 @@ impl Window {
 }
 
 impl Notifier for Window {
-    type Event = Action;
+    type Event = action::Action;
 
     fn poll_next(
         self: Pin<&mut Self>,
-        _cx: &mut Exec<'_>,
+        _cx: &mut prelude::Exec<'_>,
     ) -> Poll<Self::Event> {
         Poll::Pending
     }
