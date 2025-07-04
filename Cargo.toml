@@ -12,14 +12,15 @@
 name = "sprengui"
 version = "0.1.0"
 edition = "2024"
-license = "Apache-2.0 OR MIT OR BSL-1.0"
+license = "Apache-2.0 OR BSL-1.0 OR MIT"
 documentation = "https://docs.rs/sprengui"
-homepage = "https://github.com/libcala/sprengui/blob/main/CHANGELOG.md"
-repository = "https://github.com/libcala/sprengui"
+homepage = "https://github.com/ardaku/sprengui/blob/v0/CHANGELOG.md"
+repository = "https://github.com/ardaku/sprengui"
 readme = "README.md"
 description = "Native-ish GUI Toolkit"
 keywords = []
 categories = []
+rust-version = "1.85.0"
 
 [dependencies]
 pix = "0.13"
