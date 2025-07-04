@@ -12,7 +12,7 @@ use crate::action::Action;
 use crate::page::widget::Widget;
 use crate::page::window::Window;
 use page::text::Text;
-use pasts::{prelude::*, Notifier};
+use pasts::{Notifier, prelude::*};
 
 #[cfg(test)]
 mod tests;
