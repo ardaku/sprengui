@@ -11,7 +11,7 @@
 [package]
 name = "sprengui"
 version = "0.1.0"
-edition = "2018"
+edition = "2021"
 license = "Apache-2.0 OR MIT OR BSL-1.0"
 documentation = "https://docs.rs/sprengui"
 homepage = "https://github.com/libcala/sprengui/blob/main/CHANGELOG.md"
