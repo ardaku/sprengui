@@ -8,10 +8,10 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
+use crate::{Action, Exec, Menu, Widget};
+use pasts::Notifier;
 use std::pin::Pin;
 use std::task::Poll;
-use pasts::Notifier;
-use crate::{Action, Exec, Menu, Widget};
 
 /// Graphical window.
 pub struct Window {

@@ -8,11 +8,11 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
-use pasts::{Notifier, prelude::*};
 use crate::action::Action;
-use page::text::Text;
 use crate::page::widget::Widget;
 use crate::page::window::Window;
+use page::text::Text;
+use pasts::{prelude::*, Notifier};
 
 #[cfg(test)]
 mod tests;
@@ -26,7 +26,6 @@ enum Icon {
     /// Pencil icon
     Pencil,
 }
-
 
 struct MenuItem {
     icon: Option<Icon>,
@@ -52,4 +51,3 @@ impl Menu {
         Self { id, items }
     }
 }
-

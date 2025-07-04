@@ -8,9 +8,9 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
+pub mod text;
 pub mod widget;
 pub mod window;
-pub mod text;
 
 use crate::{Widget, Window};
 
@@ -47,4 +47,3 @@ impl Page {
         self.widgets.push(widget);
     }
 }
-
