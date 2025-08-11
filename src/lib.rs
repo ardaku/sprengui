@@ -1,10 +1,12 @@
 #![allow(dead_code)]
 
-use crate::action::Action;
-use crate::page::widget::Widget;
-use crate::page::window::Window;
 use page::text::Text;
 use pasts::prelude::*;
+
+use crate::{
+    action::Action,
+    page::{widget::Widget, window::Window},
+};
 
 #[cfg(test)]
 mod tests;

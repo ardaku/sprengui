@@ -1,11 +1,12 @@
-use crate::{Action, Exec, Menu, Widget};
+use std::{pin::Pin, task::Poll};
+
 use pasts::Notifier;
-use std::pin::Pin;
-use std::task::Poll;
+
+use crate::{Action, Exec, Menu, Widget};
 
 /// Graphical window.
 pub struct Window {
-    /*window::Window, */
+    /* window::Window, */
     widgets: Vec<Widget>,
     pub(crate) menus: usize,
 }
