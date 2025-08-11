@@ -8,11 +8,13 @@
 // At your choosing (See accompanying files LICENSE_APACHE_2_0.txt,
 // LICENSE_MIT.txt and LICENSE_BOOST_1_0.txt).
 
+#![allow(dead_code)]
+
 use crate::action::Action;
 use crate::page::widget::Widget;
 use crate::page::window::Window;
 use page::text::Text;
-use pasts::{Notifier, prelude::*};
+use pasts::prelude::*;
 
 #[cfg(test)]
 mod tests;
